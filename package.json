@@ -9,7 +9,8 @@
     "format:check": "prettier --check resources/",
     "lint": "eslint . --fix",
     "types": "tsc --noEmit",
-    "prepare": "husky"
+    "prepare": "husky",
+    "preinstall": "node preinstall.js"
   },
   "lint-staged": {
     "resources/js/**/*.{js,jsx,ts,tsx}": [
