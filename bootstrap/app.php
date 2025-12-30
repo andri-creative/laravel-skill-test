@@ -16,6 +16,13 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->encryptCookies(except: ['appearance']);
 
+        $middleware->validateCsrfTokens(except: [
+            'posts',
+            'posts/*',
+            'login',
+            'register',
+        ]);
+
         $middleware->web(append: [
             HandleAppearance::class,
             HandleInertiaRequests::class,
